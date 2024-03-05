@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Karma:wght@300;400;500;600;700&family=Shrikhand&display=swap');
+:root {
+    /* Cores principais */
+    --primary-color: rgba(92, 54, 102, 0.904);
+    --secondary-color: #505050;
+    --other-color: rgba(92, 54, 102, 0.904);
+     /* Cores de fundo */
+    --body-backgroud-color: #333;
+    --header-footer-color: #ADD8E6 ;
+    /* Cores de texto */
+    --text-color:#fff;
+    --text-color-links: #2e2e2e;
+    /* Cores de status sucesso, aviso e erro*/
+    --status-sucess: #28a745;
+    --status-error: #dc3545;
+/* Text */
+    --font-base: 16px;
+    --font-custom:"Karma", serif; 
+    --font-custom2: "Shrikhand", serif;
+    --font-logo: ;
+}
+@media (prefers-color-scheme: 0) {
+    :root {
+        /* Cores principais */
+        --primary-color: #add8e6b6; 
+        --secondary-color:  rgb(235, 205, 205);
+        --other-color: rgba(92, 54, 102, 0.904);
+         /* Cores de fundo */
+        --body-backgroud-color: #333;
+        --header-footer-color: #6fa8dc ;
+        /* Cores de texto */
+        --text-color:#fff;
+        --text-color-links: #fff;
+    }
+}
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Evita problemas de layout devido ao padding e border */
+}
+body {
+    transition: display 0.3s ease;
+    font-family: var(--font-custom);
+    font-size: var(--font-base);
+    color: var(--text-color);
+    line-height: 1.5;
+    letter-spacing: 0.1vw;
+    background-color: var(--body-backgroud-color);
+    
+}
+body h3 {
+  color: var(--primary-color);
+}
+header {
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-color-links);
+  cursor: pointer;
+  border-radius: 20px;
+  padding: 7px;
+  transition: background-color 0.7s;
+}
+.container-flex form {
+  display: flex;
+  justify-content: center;
+}
+.container-flex form div {
+  padding: 7px;
+  text-align: center;
+  background-color: var(--secondary-color);
+  max-width: 350px;
+}
+.container-flex form > div:nth-child(1) {
+  border-radius: 5px 0 0 5px;
+  border-right: #666666 solid 1px;
+}
+.container-flex form > div:nth-child(2){
+  border-radius: 0 5px 5px 0px;
+}
+.container-flex form div img {
+  width: 89%;
+}
+.images-container :not(.btn-basic) {
+  display: flex;
+  overflow: unset;
+  position: relative;
+  transition: transform .15s;
+}
+@media screen and( max-width: 650px){
+
+}
+/* btn-basic BTN */
+.btn-basic {
+    background-color: #0c0c0c; /* Cor de fundo do botão */
+    color: #fff; /* Cor do texto */
+    border: none;
+    border-radius: 20px;
+    padding: 12px calc(1vw + 21px);
+    cursor: pointer;
+    outline: none;
+    font-weight: bold;
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.7s;
+  }
+  
+  .btn-basic:hover {
+    background-color: #858585;
+  }
+  
+  .btn-basic-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/6/6b/btn-basic.svg');
+    background-size: cover;
+  }
+  
+  .btn-basic-text {
+    margin-left: 12px;
+  }
+  
+  .btn-basic::before {
+    content: '';
+    position: absolute;
+    width: 300%;
+    height: 300%;
+    background-color: rgba(255, 255, 255, 0.2);
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 1.2s;
+    pointer-events: none;
+  }
+  
+  .btn-basic:hover::before {
+    transform: translate(-50%, -50%) scale(3);
+  }
